@@ -1,4 +1,4 @@
-# Tarea2_Flask_2023
+# Tarea 2 Flask 2023
 
 ## Información general
 - Mantenido por: Renato Salsilli
