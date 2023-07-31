@@ -1,0 +1,50 @@
+{%extends "base_template.html" %}
+
+{% block title %} Pagina inicial {% endblock %}
+
+
+{% block content %}
+
+<!-- Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="{{url_for("static", filename="img/photographer2.jpg") }}" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center">
+    <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">Top 30 consolas mas vendidas en la historia</h1>
+    <h3 class="w3-hide-medium w3-hide-small"></h3>
+  </div>
+</div>
+
+<!-- Navbar (sticky bottom) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="../"  class="w3-bar-item w3-button">Inicio</a>
+    <div class="w3-right w3-hide-small">
+      {% for c in compañias %}
+        <a href="../{{c}}" class="w3-bar-item w3-button">{{c}}</a>
+      {% endfor %}
+      <a href="../about" class="w3-bar-item w3-button">AcercaDe</a>
+    </div>
+  </div>
+</div>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>tabla del Top 30 de las consolas vendidas de todos los tiempos </h1>
+      <iframe title="Top ventas de cada plataforma" aria-label="Table" id="datawrapper-chart-tj8W7" src="https://datawrapper.dwcdn.net/tj8W7/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="603" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+      </script>
+    </div>
+    <div class="w3-twothird">
+      <h1>Ventas de cada Compañia</h1>
+      <iframe aria-label="table" src="https://datawrapper.dwcdn.net/B4rS0/2/" scrolling="no" frameborder="0" width = "800" height="700" ></iframe>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
