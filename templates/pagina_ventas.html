@@ -1,0 +1,33 @@
+{%extends "base_template.html" %}
+
+{% block title %} Pagina de consolas {% endblock %}
+
+{% block content %}
+
+
+<!-- Navbar (sticky bottom) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="../"  class="w3-bar-item w3-button">Inicio</a>
+    <div class="w3-right w3-hide-small">
+      <a href="#!"  class="w3-bar-item w3-button">{{compañia.nick}}</a>
+      {% for c in compañia.otros %}
+        <a href="../{{c}}"  class="w3-bar-item w3-button">{{c}}</a>
+      {% endfor %}
+      <a href="../about"  class="w3-bar-item w3-button">AcercaDe</a>
+    </div>
+  </div>
+</div>
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64 " id="about">
+    <div class="w3-col m6 w3-padding-large w3-hover-border-pink">
+      <h1 class="w3-center">Tabla de consolas de {{compañia.nombre}}</h1><br>
+      <p class="w3-center"><img src="{{compañia.urlimg}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+      <p class="w3-center">{{compañia.descripcion}}.</p>
+    </div>
+    <div class="w3-col m6 w3-padding-large">
+      <iframe aria-label="table" src="{{compañia.url}}" scrolling="no" frameborder="0" width = "800" height="700" ></iframe>
+    </div>
+  </div>
+{% endblock %}

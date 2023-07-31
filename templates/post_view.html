@@ -1,0 +1,39 @@
+
+{%extends "base_template.html" %}
+
+{% block title %} Pagian del Acerca de {% endblock %}
+
+{% block content %}
+<!-- Navbar (sticky bottom) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="../" class="w3-bar-item w3-button">Inicio</a>
+    <div class="w3-right w3-hide-small">
+      {% for c in compañias %}
+        <a href="../{{c}}" class="w3-bar-item w3-button">{{c}}</a>
+      {% endfor %}
+      <a href="../about" class="w3-bar-item w3-button">AcercaDe</a>
+    </div>
+  </div>
+</div>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>¿Quién lo hizo?</h1>
+      <p class="w3-text-grey">Esta pagina fue creada por alumno Renato Salsilli de la Universidad de Playa Ancha</p>
+    </div>
+    <div class="w3-twothird">
+      <h1>¿Qué es?</h1>
+      <p class="w3-text-grey">Son visualizaciones para el conocimiento de top de consolas que se vendieron a lo largo de años</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
